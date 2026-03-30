@@ -4,22 +4,22 @@ export const skills = [
       skills: [
         { 
           name: "React", 
-          icon: "/assets/icons/react.svg", 
+          icon: "./assets/icons/react.svg", 
           description: "Biblioteca para interfaces de usuario" 
         },
         { 
           name: "JavaScript", 
-          icon: "/assets/icons/js.svg", 
+          icon: "./assets/icons/js.svg", 
           description: "Lenguaje de programación web" 
         },
         { 
           name: "HTML5", 
-          icon: "/assets/icons/html.svg", 
+          icon: "./assets/icons/html.svg", 
           description: "Estructura y estilos web" 
         },
         { 
           name: "CSS3", 
-          icon: "/assets/icons/css3.svg", 
+          icon: "./assets/icons/css3.svg", 
           description: "Estructura y estilos web" 
         }
       ]
@@ -29,12 +29,12 @@ export const skills = [
       skills: [
         { 
           name: "Node.js", 
-          icon: "/assets/icons/nodejs.svg", 
+          icon: "./assets/icons/nodejs.svg", 
           description: "JavaScript runtime para backend" 
         },
         { 
           name: "Express.js", 
-          icon: "/assets/icons/express.svg", 
+          icon: "./assets/icons/express.svg", 
           description: "Framework para Node.js" 
         }
       ]
@@ -44,7 +44,7 @@ export const skills = [
       skills: [
         { 
           name: "MySQL", 
-          icon: "/assets/icons/sql.svg", 
+          icon: "./assets/icons/sql.svg", 
           description: "Base de datos relacional" 
         }
       ]
@@ -54,28 +54,28 @@ export const skills = [
       skills: [
         { 
           name: "Git", 
-          icon: "/assets/icons/git.svg", 
+          icon: "./assets/icons/git.svg", 
           description: "Control de versiones" 
         },
         { 
           name: "GitHub", 
-          icon: "/assets/icons/github.svg", 
+          icon: "./assets/icons/github.svg", 
           description: "Plataforma de colaboración" 
         },
         { 
           name: "VS Code", 
-          icon: "/assets/icons/vscode.svg", 
+          icon: "./assets/icons/vscode.svg", 
           description: "Editor de código" 
         },
        { 
           name: "Slack", 
-          icon: "/assets/icons/slack.svg", 
+          icon: "./assets/icons/slack.svg", 
           description: "Comunicación y colaboración" 
 
         },
          { 
           name: "jira", 
-          icon: "/assets/icons/jira.svg", 
+          icon: "./assets/icons/jira.svg", 
           description: "Gestión de proyectos y tareas" 
         }
         ]

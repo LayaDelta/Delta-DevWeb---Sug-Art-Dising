@@ -21,7 +21,7 @@ const Navbar = () => {
           <Logo
             title="Delta-DevWeb"
             subtitle="Sug-Art-Dising 1.0"
-            imglogo="/assets/Logo.png"
+            imglogo="./assets/icons/Logo.png"
           />
         </div>
         

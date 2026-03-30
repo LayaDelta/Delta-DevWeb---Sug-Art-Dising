@@ -2,13 +2,12 @@ import babel from '@rolldown/plugin-babel'
 import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: './', // 👈 ESTO ES LO QUE FALTA - Usa rutas relativas
+  base: '/Delta-DevWeb---Sug-Art-Dising/', // 👈 CAMBIA a la ruta de tu repo
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
