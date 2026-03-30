@@ -1,0 +1,66 @@
+/* components/atoms/logo/Logo.css */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.logo-container img {
+  width: clamp(60px, 10vw, 80px);
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.logo-container p {
+  margin: 1px 0 0 0;
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+  color: #007bff;
+  line-height: 1.4;
+font-weight: 600;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .logo-container {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .logo-container h1 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .logo-container p {
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+  }
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .logo-container {
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+  
+  .logo-container img {
+    width: clamp(40px, 8vw, 60px);
+  }
+}

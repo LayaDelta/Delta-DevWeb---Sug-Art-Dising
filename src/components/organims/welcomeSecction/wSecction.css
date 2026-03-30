@@ -1,0 +1,87 @@
+/* WelcomeSection.css */
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: radial-gradient(circle at center, #7DB5EE, #FFA6ED);
+  animation: fadeIn 0.8s ease-out forwards;
+  margin: 0%;
+}
+
+/* Ocultar la imagen en móviles (por defecto) */
+.welcome-section > :first-child {
+  display: none;
+}
+
+/* Keyframes para el contenedor principal */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Contenedor del texto */
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  flex: 1;
+}
+
+/* Tablet (768px y superior) - Mostrar imagen */
+@media (min-width: 768px) {
+  .welcome-section {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 3rem;
+  }
+
+  /* Mostrar la imagen en tablet y desktop */
+  .welcome-section > :first-child {
+    display: block;
+    flex: 1;
+    max-width: 45%;
+  }
+
+  .welcome-text {
+    text-align: left;
+    flex: 1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .welcome-section {
+    gap: 4rem;
+    padding: 5rem 4rem; 
+  }
+
+  .welcome-section > :first-child {
+    max-width: 40%;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1440px) {
+  .welcome-section {
+    gap: 5rem;
+    padding: 6rem 5rem;
+  }
+}
+
+/* Móviles pequeños - imagen ya está oculta por defecto */
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,227 @@
+/* footer.css */
+.footer {
+  background: #000000;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer * {
+  box-sizing: border-box;
+}
+
+/* Logo en el footer */
+.footer .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.footer .logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1); /* Hace el logo blanco */
+}
+
+.footer .logo h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer .logo p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin: 0.25rem 0 0;
+}
+
+/* Secciones del footer */
+.footer-section {
+  flex: 1;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Títulos en el footer */
+.footer .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Línea decorativa debajo de los títulos */
+.footer .title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #FFA6ED;
+  margin: 0.5rem auto 0;
+  transition: width 0.3s ease;
+}
+
+.footer .title:hover::after {
+  width: 80px;
+}
+
+/* Párrafos en el footer */
+.footer .paragraph {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0.5rem 0;
+  word-wrap: break-word;
+}
+
+/* Enlaces en los párrafos */
+.footer .paragraph a {
+  color: #FFA6ED;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .paragraph a:hover {
+  color: #7DB5EE;
+  text-decoration: underline;
+}
+
+/* Copyright */
+.footer .copyright {
+  font-size: 0.85rem;
+  color: #999999;
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333333;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Layout horizontal para tablet y desktop */
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 4rem 3rem;
+  }
+
+  .footer .logo {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+  }
+
+  .footer-section {
+    text-align: left;
+    flex: 1;
+  }
+
+  .footer .title {
+    text-align: left;
+  }
+
+  .footer .title::after {
+    margin: 0.5rem 0 0;
+  }
+
+  .footer .paragraph {
+    text-align: left;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 5rem 4rem;
+    gap: 4rem;
+  }
+
+  .footer .logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer .logo h3 {
+    font-size: 1.75rem;
+  }
+
+  .footer .title {
+    font-size: 1.5rem;
+  }
+
+  .footer .paragraph {
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1440px) {
+  .footer {
+    padding: 6rem 5rem;
+    max-width: 1600px;
+    margin: 4rem auto 0;
+  }
+}
+
+/* Móviles pequeños - sigue siendo vertical */
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .footer .logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer .logo h3 {
+    font-size: 1.25rem;
+  }
+
+  .footer .title {
+    font-size: 1.1rem;
+  }
+
+  .footer .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .footer .copyright {
+    font-size: 0.7rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Retrasos escalonados */
+.footer .logo { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer .copyright { animation-delay: 0.4s; }

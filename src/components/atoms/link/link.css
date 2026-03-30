@@ -1,0 +1,11 @@
+.custom-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  
+}
+
+.custom-link:hover {
+  color: #FFA6ED;
+}

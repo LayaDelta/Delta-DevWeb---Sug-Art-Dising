@@ -1,0 +1,77 @@
+/* image.css - Estilos atómicos para el componente Image */
+
+/* Átomo: responsive-image */
+.responsive-image {
+  /* Base */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  
+  /* Por defecto: ancho completo en móviles */
+  width: 100%;
+  
+  /* Prevenir distorsión */
+  object-fit: cover;
+  
+  /* Efecto de aparición */
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Keyframes para el efecto fade in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Breakpoint: Tablets (768px y superior) */
+@media (min-width: 768px) {
+  .responsive-image {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Breakpoint: Desktop (1024px y superior) */
+@media (min-width: 1024px) {
+  .responsive-image {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+/* Breakpoint: Pantallas grandes (1440px y superior) */
+@media (min-width: 1440px) {
+  .responsive-image {
+    width: 70%;
+    max-width: 1400px;
+  }
+}
+
+/* Versión con borde */
+.responsive-image.bordered {
+  border: 2px solid #e0e0e0;
+}
+
+/* Responsive para imágenes en grid o contenedores específicos */
+.responsive-image.full-width {
+  width: 100%;
+}
+
+/* Modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  .responsive-image {
+    filter: brightness(0.9);
+  }
+  
+  .responsive-image.bordered {
+    border-color: #404040;
+  }
+}

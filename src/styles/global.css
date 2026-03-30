@@ -1,0 +1,34 @@
+/* src/styles/global.css */
+:root {
+  /* Fuentes principales */
+  --font-primary: "jost", sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  /* Tamaños de fuente */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  
+  /* Pesos de fuente */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
+  line-height: 1.5;
+  color: #333;
+    margin: 0;
+    padding: 0;
+}
