@@ -10,7 +10,7 @@ const Footer = () => {
         <Logo 
           title="Delta DevWeb"
           subtitle="Sug-Art-Dising"
-          imglogo="/assets/Logo.png"
+          imglogo="./assets/icons/Logo.png"
         />
       </div>
       

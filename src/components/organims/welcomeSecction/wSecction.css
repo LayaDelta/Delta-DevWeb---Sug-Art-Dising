@@ -9,7 +9,6 @@
   margin: 0 auto;
   background: radial-gradient(circle at center, #7DB5EE, #FFA6ED);
   animation: fadeIn 0.8s ease-out forwards;
-  margin: 0%;
 }
 
 /* Ocultar la imagen en móviles (por defecto) */
@@ -34,6 +33,76 @@
   gap: 1rem;
   text-align: center;
   flex: 1;
+  width: 100%;
+}
+
+/* Estilos responsivos para el título */
+.welcome-text .title {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin: 0;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Estilos responsivos para el párrafo */
+.welcome-text .paragraph {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  line-height: 1.6;
+  margin: 0;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Móviles muy pequeños (hasta 360px) */
+@media (max-width: 360px) {
+  .welcome-section {
+    padding: 1.5rem 0.75rem;
+    gap: 1rem;
+  }
+  
+  .welcome-text .title {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+  
+  .welcome-text .paragraph {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    line-height: 1.4;
+  }
+}
+
+/* Móviles pequeños (361px - 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .welcome-section {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+  
+  .welcome-text .title {
+    font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+  }
+  
+  .welcome-text .paragraph {
+    font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+    line-height: 1.5;
+  }
+}
+
+/* Móviles grandes (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .welcome-section {
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+  
+  .welcome-text .title {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+  
+  .welcome-text .paragraph {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    line-height: 1.6;
+  }
 }
 
 /* Tablet (768px y superior) - Mostrar imagen */
@@ -56,9 +125,17 @@
     text-align: left;
     flex: 1;
   }
+  
+  .welcome-text .title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  
+  .welcome-text .paragraph {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+  }
 }
 
-/* Desktop */
+/* Desktop (1024px y superior) */
 @media (min-width: 1024px) {
   .welcome-section {
     gap: 4rem;
@@ -68,20 +145,83 @@
   .welcome-section > :first-child {
     max-width: 40%;
   }
+  
+  .welcome-text .title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+  
+  .welcome-text .paragraph {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.7;
+  }
 }
 
-/* Pantallas grandes */
+/* Pantallas grandes (1440px y superior) */
 @media (min-width: 1440px) {
   .welcome-section {
     gap: 5rem;
     padding: 6rem 5rem;
   }
+  
+  .welcome-text .title {
+    font-size: 3rem;
+  }
+  
+  .welcome-text .paragraph {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
 }
 
-/* Móviles pequeños - imagen ya está oculta por defecto */
-@media (max-width: 480px) {
+/* Pantallas muy grandes (1920px y superior) */
+@media (min-width: 1920px) {
   .welcome-section {
-    padding: 2rem 1rem;
-    gap: 1.5rem;
+    max-width: 1600px;
+    padding: 7rem 6rem;
+  }
+  
+  .welcome-text .title {
+    font-size: 3.5rem;
+  }
+  
+  .welcome-text .paragraph {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .welcome-section {
+    padding: 1.5rem 2rem;
+  }
+  
+  .welcome-text .title {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+  }
+  
+  .welcome-text .paragraph {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+}
+
+/* Soporte para textos largos */
+.welcome-text .title,
+.welcome-text .paragraph {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Mejora de legibilidad para textos largos */
+.welcome-text .paragraph {
+  text-wrap: pretty;
+}
+
+/* Ajuste para pantallas de alta densidad (retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .welcome-text .paragraph {
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
   }
 }
