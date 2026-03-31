@@ -1,0 +1,17 @@
+/* HomeTemplate.css */
+.home-template-container {
+  min-height: 100vh;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .home-template-container {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-template-container {
+    min-height: 100vh;
+  }
+}

@@ -1,13 +1,7 @@
-import "./Container.css";
+import "./container.css";
 
-const Container = ({ children, className = "", fluid = false, ...props }) => {
-  const containerClass = fluid ? "container-fluid" : "container";
-  
-  return (
-    <div className={`${containerClass} ${className}`} {...props}>
-      {children}
-    </div>
-  );
+const Container = ({ children, className }) => {
+  return <div className={`container ${className}`}>{children}</div>;
 };
 
 export default Container;

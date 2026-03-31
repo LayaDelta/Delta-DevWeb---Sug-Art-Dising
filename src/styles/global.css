@@ -21,14 +21,134 @@
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
+  
+  /* Paleta de colores de Hollow Knight */
+  --hollow-dark: #0a0f1c;      /* Azul oscuro profundo */
+  --hollow-darker: #05070c;    /* Casi negro azulado */
+  --hollow-mid: #1a2638;       /* Azul grisáceo oscuro */
+  --hollow-light: #2a3a4f;     /* Azul apagado */
+  --hollow-accent: #4a6a8a;    /* Azul medio */
+  --hollow-glow: #6b8cae;      /* Azul brillante */
+  --hollow-pale: #8baac9;      /* Azul pálido */
+  --hollow-dream: #c5d5e6;     /* Azul muy claro */
+  --hollow-soul: #2c4f6e;      /* Azul alma */
+  --hollow-vessel: #1b2a3f;    /* Color del recipiente */
+  --hollow-eyes: #4a7a9e;      /* Color de ojos brillantes */
+  --hollow-wings: #3d5a73;      /* Toque verdoso oscuro */
 }
 
+/* Fondo con estrellas para el body */
 body {
   font-family: var(--font-primary);
   font-size: var(--text-lg);
   font-weight: var(--font-normal);
   line-height: 1.5;
-  color: #333;
-    margin: 0;
-    padding: 0;
+  color: var(--hollow-dream);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, var(--hollow-mid) 0%, var(--hollow-dark) 50%, var(--hollow-darker) 100%);
+  position: relative;
+  overflow-x: hidden;
 }
+
+/* Efecto de estrellas */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 10px 30px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 80px 150px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 80px, white, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 350px 250px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 500px 120px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 650px 400px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 800px 50px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 950px 300px, white, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 1100px 150px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1250px 500px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 1400px 200px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 100px 600px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 400px 700px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 700px 800px, white, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 1000px 650px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1300px 750px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 1500px 850px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 300px 900px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 850px 950px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1150px 880px, white, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 1450px 980px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 50px 1050px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 550px 1100px, white, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1200px 1150px, white, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 1600px 1080px, white, rgba(0,0,0,0));
+  background-repeat: no-repeat;
+  background-size: 2000px 1200px;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: starsTwinkle 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Capa adicional de estrellas más pequeñas y distantes */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 60px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 200px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 300px 100px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 450px 350px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 600px 180px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 750px 450px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 900px 250px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1050px 550px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1200px 350px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1350px 650px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1500px 450px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 800px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 500px 950px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 800px 850px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1100px 1000px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1400px 900px, rgba(255,255,255,0.5), rgba(0,0,0,0));
+  background-repeat: no-repeat;
+  background-size: 2000px 1200px;
+  opacity: 0.4;
+  pointer-events: none;
+  animation: starsTwinkleSlow 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Animación de parpadeo para las estrellas */
+@keyframes starsTwinkle {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes starsTwinkleSlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Asegurar que el contenido esté por encima de las estrellas */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+

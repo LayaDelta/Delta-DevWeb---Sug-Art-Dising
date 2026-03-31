@@ -19,8 +19,8 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-logo">
           <Logo
-            title="Delta-DevWeb"
-            subtitle="Sug-Art-Dising 1.0"
+            title="</Delta-DevWeb\>"
+            subtitle="Hollow Mind"
             imglogo="./assets/icons/Logo.png"
           />
         </div>
