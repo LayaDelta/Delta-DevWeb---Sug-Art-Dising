@@ -1,0 +1,27 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-field-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #c5d5e6;
+  text-align: left;
+  margin-left: 0.5rem;
+  opacity: 0.9;
+}
+
+.form-field-control {
+  width: 100%;
+}
+
+.form-field-error {
+  font-size: 0.85rem;
+  color: #ff6b6b;
+  text-align: left;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+}

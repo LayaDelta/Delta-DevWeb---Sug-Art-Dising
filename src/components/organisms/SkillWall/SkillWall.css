@@ -1,0 +1,209 @@
+/* skillWall.css */
+.skill-wall {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 100%);
+}
+
+.skill-wall .title {
+  color: #e8eef4;
+  text-shadow: 0 0 12px rgba(var(--primary-rgb), 0.8);
+  text-align: center;
+  animation: fadeInDown 0.6s ease-out forwards;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.skill-wall .paragraph {
+  color: #9eb4cc;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 0.5rem;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  width: 100%;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para los contenedores hijos (skills) */
+.skills-grid > * {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  padding: 0.3rem;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: none;
+}
+
+/* Efecto hover opcional - sin bordes */
+.skills-grid > *:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Elementos internos de cada skill */
+.skills-grid > * > * {
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos para íconos dentro de skills (si existen) */
+.skills-grid > * img,
+.skills-grid > * svg {
+  width: clamp(45px, 8vw, 65px);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Títulos de skills */
+.skills-grid > * h3,
+.skills-grid > * .skill-title {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  color: #e8eef4;
+  margin: 0.75rem 0;
+}
+
+/* Descripciones de skills */
+.skills-grid > * p,
+.skills-grid > * .skill-description {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  color: #9eb4cc;
+  line-height: 1.5;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .skill-wall {
+    padding: 3rem 1.5rem;
+    gap: 1.75rem;
+  }
+  
+  .skills-grid {
+    gap: 2rem;
+    max-width: 700px;
+    margin-top: 1.5rem;
+  }
+  
+  .skills-grid > * {
+    padding: 0.25rem;
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .skill-wall {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+  
+  .skills-grid {
+    gap: 1.5rem; /* Reducido de 1.75rem */
+    max-width: 100%;
+    margin-top: 1.25rem;
+  }
+  
+  .skills-grid > * {
+    padding: 0.25rem;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .skill-wall {
+    padding: 1.5rem 0.75rem;
+    gap: 1.25rem;
+  }
+  
+  .skills-grid {
+    gap: 1.25rem; /* Reducido de 1.5rem */
+    margin-top: 1rem;
+  }
+  
+  .skills-grid > * {
+    padding: 0.2rem;
+  }
+}
+
+/* Para pantallas grandes (1200px - 1600px) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .skills-grid {
+    max-width: 850px;
+    gap: 2.5rem;
+  }
+  
+  .skills-grid > * {
+    padding: 0.3rem;
+    max-width: 100%;
+  }
+}
+
+/* Para pantallas muy grandes (1600px+) */
+@media (min-width: 1600px) {
+  .skill-wall {
+    padding: 6rem 2rem;
+  }
+  
+  .skills-grid {
+    max-width: 1000px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  .skills-grid > * {
+    padding: 0.4rem;
+  }
+}

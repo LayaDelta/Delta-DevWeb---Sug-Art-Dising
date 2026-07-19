@@ -1,34 +1,33 @@
 /* toolList.css */
 .tool-list-container {
-  margin-top: 1.75rem;
-  padding-top: 1.5rem;
-  border-top: 2px solid rgba(107, 140, 174, 0.3);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(var(--primary-rgb), 0.3);
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
-  animation: toolListAppear 0.5s ease-out forwards;
-  animation-delay: 0.5s;
   opacity: 0;
-  transform: translateY(10px);
-  animation-fill-mode: forwards;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  text-align: center;
+  width: 100%;
 }
 
-@keyframes toolListAppear {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.tool-list-container.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .tool-list-container .title {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: #9eb4cc;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-shadow: 0 0 5px rgba(107, 140, 174, 0.3);
+  text-shadow: 0 0 5px rgba(var(--primary-rgb), 0.3);
+  text-align: center;
 }
 
 .tool-list {
@@ -36,82 +35,77 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .tool-item {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, rgba(107, 140, 174, 0.12) 0%, rgba(75, 0, 130, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.12) 0%, rgba(75, 0, 130, 0.08) 100%);
   border-radius: 40px;
-  border: 1px solid rgba(107, 140, 174, 0.3);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
   transition: all 0.3s ease;
   cursor: default;
   backdrop-filter: blur(2px);
-  animation: toolItemAppear 0.3s ease-out forwards;
   opacity: 0;
   transform: scale(0.9);
+  background-color: #e8eef4;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.tool-item:nth-child(1) { animation-delay: 0.6s; }
-.tool-item:nth-child(2) { animation-delay: 0.65s; }
-.tool-item:nth-child(3) { animation-delay: 0.7s; }
-.tool-item:nth-child(4) { animation-delay: 0.75s; }
-.tool-item:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes toolItemAppear {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.tool-item:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, rgba(107, 140, 174, 0.22) 0%, rgba(75, 0, 130, 0.16) 100%);
-  border-color: rgba(107, 140, 174, 0.7);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 12px rgba(107, 140, 174, 0.25);
+.tool-list-container.visible .tool-item {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .tool-item .icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  filter: drop-shadow(0 0 2px rgba(107, 140, 174, 0.6));
+  filter: drop-shadow(0 0 2px rgba(var(--primary-rgb), 0.6));
+  margin-top: 4px;
+  margin-bottom: 0;
 }
 
 .tool-item span {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #e8eef4;
+  color: #202736;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Tablet */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .tool-list-container {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
+    margin-top: 0.875rem;
+    padding-top: 0.875rem;
   }
-  
+
   .tool-list-container .title {
     font-size: 0.95rem;
-    margin-bottom: 0.875rem;
+    margin-bottom: 0.625rem;
   }
-  
+
   .tool-list {
     gap: 0.625rem;
   }
-  
+
   .tool-item {
     padding: 0.4375rem 0.875rem;
   }
-  
+
   .tool-item .icon {
     width: 16px;
     height: 16px;
   }
-  
+
   .tool-item span {
     font-size: 0.8rem;
   }
@@ -120,29 +114,45 @@
 /* Mobile */
 @media (max-width: 768px) {
   .tool-list-container {
-    margin-top: 1.25rem;
-    padding-top: 1rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
   }
-  
+
   .tool-list-container .title {
     font-size: 0.875rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
-  
+
   .tool-list {
     gap: 0.5rem;
+    justify-content: center;
   }
-  
+
   .tool-item {
     padding: 0.375rem 0.75rem;
   }
-  
+
   .tool-item .icon {
     width: 14px;
     height: 14px;
   }
-  
+
   .tool-item span {
     font-size: 0.75rem;
+  }
+}
+
+/* Para móviles pequeños */
+@media (max-width: 480px) {
+  .tool-list {
+    gap: 0.5rem;
+  }
+
+  .tool-item {
+    padding: 0.375rem 0.625rem;
+  }
+
+  .tool-item span {
+    font-size: 0.7rem;
   }
 }

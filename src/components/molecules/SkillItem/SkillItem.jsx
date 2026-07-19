@@ -1,56 +1,30 @@
-import { useEffect, useRef } from "react";
-import Container from "../../atoms/container/container";
-import Icon from "../../atoms/icon/icon";
-import Paragraph from "../../atoms/paragraph/paragraph";
-import ProgressBar from "../../atoms/progressbar/progressbar";
-import Title from "../../atoms/title/title";
+import { memo } from "react";
+import { useTranslation } from "react-i18next";
+import Container from "../../atoms/container/Container";
+import Icon from "../../atoms/icon/Icon";
+import Paragraph from "../../atoms/paragraph/Paragraph";
+import Title from "../../atoms/title/Title";
 import "./SkillItem.css";
 
-const SkillItem = ({ name, icon, description, percentage }) => {
-  const skillRef = useRef(null);
-
-  useEffect(() => {
-    const currentRef = skillRef.current;
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const progressBarFill = entry.target.querySelector('.progress-bar-fill');
-            if (progressBarFill) {
-              progressBarFill.style.setProperty('--target-width', `${percentage}%`);
-              progressBarFill.style.width = `${percentage}%`;
-            }
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [percentage]);
-
+const SkillItem = ({ name, icon, description, percentage, isVisible }) => {
+  const { t } = useTranslation();
   return (
-    <Container className="skill-item" ref={skillRef}>
+    <Container className={`skill-item ${isVisible ? 'visible' : ''}`}>
       <div className="skill-item-header">
         <Icon src={icon} alt={name} />
         <div className="skill-item-info">
           <Title text={name} />
-          <Paragraph text={description} />
+          <Paragraph text={t(`home.skills.descriptions.${name}`, description)} />
         </div>
       </div>
-      <ProgressBar percentage={percentage} />
+      <div className="progress-bar-container">
+        <div
+          className="progress-bar-fill"
+          style={{ transform: `scaleX(${isVisible ? percentage / 100 : 0})` }}
+        ></div>
+      </div>
     </Container>
   );
 };
 
-export default SkillItem;
+export default memo(SkillItem);

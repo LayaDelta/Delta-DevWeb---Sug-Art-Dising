@@ -8,16 +8,19 @@
   padding: 3rem 2.5rem;
   max-width: 750px;
   width: 85%;
-  margin: 2rem auto;
+  margin: 1rem auto; /* Reducido de 2rem */
   background: linear-gradient(135deg, rgba(10, 15, 28, 0.95) 0%, rgba(5, 7, 12, 0.98) 100%);
   animation: fadeIn 0.8s ease-out forwards;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(107, 140, 174, 0.2);
-  min-height: auto;
-  position: relative;
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(107, 140, 174, 0.3);
+  border: 1px solid rgba(107, 140, 174, 0.15); /* Reducido de 0.4 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Reducido de 10px 30px */
+  animation: fadeIn 0.8s ease-out forwards, sectionGlow 4s ease-in-out infinite;
   overflow: hidden;
+}
+
+@keyframes sectionGlow {
+  0%, 100% { border-color: rgba(107, 140, 174, 0.3); box-shadow: 0 0 15px rgba(107, 140, 174, 0.2); }
+  50% { border-color: rgba(107, 140, 174, 0.6); box-shadow: 0 0 25px rgba(107, 140, 174, 0.4); }
 }
 
 /* Efecto de vacío al estilo Hollow Knight */
@@ -69,6 +72,52 @@
   }
 }
 
+/* Contenedor de la imagen y su animación de borde */
+.profile-img-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; /* espacio para los bordes */
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+
+.profile-img-container::before,
+.profile-img-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  pointer-events: none;
+}
+
+/* Primer borde (interior) */
+.profile-img-container::before {
+  inset: 0;
+  border-top-color: rgba(var(--primary-rgb), 0.9);
+  border-bottom-color: rgba(var(--primary-rgb), 0.9);
+  animation: spinBorder 6s linear infinite;
+}
+
+/* Segundo borde (exterior) */
+.profile-img-container::after {
+  inset: -6px;
+  border-left-color: rgba(var(--primary-rgb), 0.4);
+  border-right-color: rgba(var(--primary-rgb), 0.4);
+  animation: spinBorderReverse 8s linear infinite;
+}
+
+@keyframes spinBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinBorderReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
 /* Efecto de aparición para la imagen */
 .welcome-section img {
   display: block;
@@ -77,16 +126,15 @@
   object-fit: cover;
   border-radius: 50%;
   animation: imageAppear 1s ease-out forwards;
-  margin-top: 0.5rem;
   position: relative;
-  z-index: 1;
-  border: 3px solid #6b8cae;
-  box-shadow: 0 0 20px rgba(107, 140, 174, 0.5);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(107, 140, 174, 0.4), 0 0 30px rgba(107, 140, 174, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(107, 140, 174, 0.3);
 }
 
 .welcome-section img:hover {
-  box-shadow: 0 0 30px rgba(107, 140, 174, 0.8);
+  box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.8);
   transform: scale(1.05);
 }
 
@@ -124,7 +172,7 @@
   white-space: nowrap;
   width: 0;
   color: #c5d5e6;
-  text-shadow: 0 0 10px rgba(107, 140, 174, 0.5);
+  text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
   min-height: 3rem;
   margin: 0 auto;
   display: inline-block;
@@ -484,8 +532,8 @@
 .welcome-section:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(107, 140, 174, 0.3);
-  border-color: rgba(107, 140, 174, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(var(--primary-rgb), 0.3);
+  border-color: rgba(var(--primary-rgb), 0.5);
 }
 
 /* Soporte para textos largos */
@@ -506,5 +554,71 @@
   .welcome-text .paragraph {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* --- ESTILOS DEL BADGE DE EDAD Y EXPERIENCIA --- */
+.badges-container {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  z-index: 10;
+}
+
+.age-badge {
+  background: rgba(var(--primary-rgb), 0.15);
+  border: 1px solid rgba(var(--primary-rgb), 0.4);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #e8eef4;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.age-badge:hover {
+  background: rgba(var(--primary-rgb), 0.25);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+.age-label {
+  opacity: 0.8;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.age-number {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: var(--mono, ui-monospace, monospace);
+}
+
+@media (max-width: 767px) {
+  .badges-container {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0;
+    margin-top: -10px; /* Acercar un poco más a la imagen */
+  }
+  
+  .age-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.8rem;
   }
 }

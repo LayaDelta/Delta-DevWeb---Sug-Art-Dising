@@ -1,6 +1,130 @@
-h1 {
-    font-size: 80px;
-    font-weight: 700;
-    color: #000000;
-    margin: 0;
+/* title.css - Base styles */
+.title {
+  margin: 0;
+  font-weight: 700;
+  color: #e8eef4;
+  text-shadow: 0 0 12px rgba(var(--primary-rgb), 0.8);
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  margin-bottom: 2px;
+}
+
+/* Mobile First - tamaños base */
+.title {
+  font-size: 1.75rem;
+}
+
+/* Mobile Grande (480px) */
+@media (min-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Desktop (992px) */
+@media (min-width: 992px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop Grande (1200px) */
+@media (min-width: 1200px) {
+  .title {
+    font-size: 2.75rem;
+  }
+}
+
+/* Pantallas Muy Grandes (1400px) */
+@media (min-width: 1400px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* Para títulos dentro de SkillCategory (h3) */
+.skill-category .title {
+  font-size: 1.5rem;
+  text-align: left;
+  border-bottom: 3px solid #6b8cae;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .skill-category .title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Para títulos dentro de SkillItem (h4) */
+.skill-item .title {
+  font-size: 1rem;
+  border-bottom: none;
+  padding-bottom: 0;
+  text-shadow: 0 0 5px rgba(var(--primary-rgb), 0.3);
+}
+
+@media (min-width: 768px) {
+  .skill-item .title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Para títulos dentro de ToolList */
+.tool-list-container .title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+  color: #9eb4cc;
+}
+
+@media (min-width: 768px) {
+  .tool-list-container .title {
+    font-size: 1rem;
+  }
+}
+
+/* Móviles pequeños (hasta 360px) */
+@media (max-width: 360px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .skill-category .title {
+    font-size: 1.25rem;
+  }
+
+  .skill-item .title {
+    font-size: 0.875rem;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .skill-category .title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Soporte para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }

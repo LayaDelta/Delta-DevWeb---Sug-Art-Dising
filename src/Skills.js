@@ -79,12 +79,7 @@ export const skills = [
         description: "Editor de código",
         percentage: 75,
         isTool: true
-      }
-    ]
-  },
-  {
-    category: "Comunicación",
-    skills: [
+      },
       { 
         name: "Slack", 
         icon: "./assets/icons/slack.svg", 

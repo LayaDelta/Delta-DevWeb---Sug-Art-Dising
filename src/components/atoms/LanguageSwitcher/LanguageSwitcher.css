@@ -1,0 +1,34 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(var(--primary-rgb), 0.1);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  padding: 0.25rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  margin-right: 1rem;
+}
+
+.language-btn {
+  background: transparent;
+  border: none;
+  color: #e8eef4;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.language-btn:hover {
+  opacity: 0.8;
+}
+
+.language-btn.active {
+  background: rgba(var(--primary-rgb), 0.4);
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
+}

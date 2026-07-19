@@ -14,11 +14,13 @@
   height: 100%;
   background: linear-gradient(90deg, #4a6a8a, #6b8cae, #4b0082);
   border-radius: 100px;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: left;
+  transform: scaleX(0);
+  will-change: transform;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 8px rgba(107, 140, 174, 0.6);
-  width: 0%;
+  box-shadow: 0 0 8px rgba(107, 140, 174, 0.4);
 }
 
 .progress-bar-fill::after {

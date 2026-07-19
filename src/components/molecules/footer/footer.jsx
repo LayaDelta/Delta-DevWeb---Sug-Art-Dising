@@ -1,34 +1,53 @@
-import Logo from "../../atoms/logo/logo";
-import Paragraph from "../../atoms/paragraph/paragraph";
-import Title from "../../atoms/title/title";
-import "./footer.css";
+import { useTranslation } from "react-i18next";
+import Logo from "../../atoms/logo/Logo";
+import Paragraph from "../../atoms/paragraph/Paragraph";
+import Title from "../../atoms/title/Title";
+import "./Footer.css";
 
 const Footer = () => {
-  return (    
-    <footer className="footer">
+  const { t } = useTranslation();
+
+  return (
+    <footer className="footer" id="contact">
       <div className="logo">
-        <Logo 
-          title="Delta DevWeb"
-          subtitle="Sug-Art-Dising"
+        <Logo
+          title="</Delta-DevWeb\>"
+          subtitle="Hollow Mind"
           imglogo="./assets/icons/Logo.png"
         />
       </div>
-      
+
       <div className="footer-section">
-        <Title text="Contacto" />
-        <Paragraph text="Correo: JuanmLaya0406@gmail.com" />
-        <Paragraph text="Teléfono: +58 04264840215" />
-        <Paragraph text="Dirección: San Juan de los Morros, Edo.Guarico, Venezuela" />
+        <Title text={t('footer.contact')} />
+        <Paragraph text={`${t('footer.email')}: JuanmLaya0406@gmail.com`} />
+        <Paragraph text={`${t('footer.phone')}: +58 04264840215`} />
+        <Paragraph text={`${t('footer.address')}: ${t('footer.addressValue')}`} />
       </div>
-      
-      <div className="footer-section">
-        <Title text="Redes Sociales" />
-        <Paragraph text="LinkedIn: https://www.linkedin.com/in/juan-miguel-laya-muñoz-124232309/" />
-        <Paragraph text="GitHub: https://github.com/LayaDelta" />
+
+      <div className="footer-section social-section">
+        <Title text={t('footer.socialNetworks')} />
+        <div className="social-buttons">
+          <a
+            href="https://www.linkedin.com/in/juan-miguel-laya-muñoz-124232309/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-button linkedin"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/LayaDelta"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-button github"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
-      
+
       <div className="copyright">
-        © 2026 Juan Miguel Laya Muñoz. Todos los derechos reservados
+        {t('footer.copyright')}
       </div>
     </footer>
   );

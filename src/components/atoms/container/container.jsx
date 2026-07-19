@@ -1,4 +1,4 @@
-import "./container.css";
+import "./Container.css";
 
 const Container = ({ children, className }) => {
   return <div className={`container ${className}`}>{children}</div>;

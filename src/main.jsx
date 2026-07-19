@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom'; // 👈 CAMBIA a HashRouter
+import { HashRouter } from 'react-router-dom';
 import App from './App';
-// 👇 Asegúrate que estas rutas son correctas (revisa mayúsculas y rutas)
-import Footer from './components/molecules/footer/footer'; // 👈 Revisa mayúsculas
-import Navbar from './components/molecules/navbar/navbar'; // 👈 Revisa mayúsculas
+import './i18n';
+import Footer from './components/molecules/footer/Footer';
+import Navbar from './components/molecules/navbar/Navbar';
 import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

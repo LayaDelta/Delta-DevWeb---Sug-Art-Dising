@@ -1,0 +1,63 @@
+{
+  "home": {
+    "welcome": {
+      "title": "Hi, I am Juan Miguel Laya Muñoz!",
+      "paragraph": "Mid-Level Web Developer | React • Next.js • Node.js | Passionate | FrontEnd | I'm a student of Advanced Systems Engineering at the Rómulo Gallegos National Experimental University. I combine solid technical skills with an analytical, methodical, and detail-oriented mindset.",
+      "ageLabel": "Age: ",
+      "expLabel": "Years coding FrontEnd: "
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "text": "Technologies and tools I master in my day-to-day work as a developer",
+      "categories": {
+        "Frontend": "Frontend",
+        "Backend": "Backend",
+        "Bases de Datos": "Databases",
+        "Gestión": "Management",
+        "Herramientas": "Tools"
+      },
+      "descriptions": {
+        "React": "Library for user interfaces",
+        "JavaScript": "Web programming language",
+        "HTML5": "Web structure and styles",
+        "CSS3": "Web structure and styles",
+        "Node.js": "JavaScript runtime for backend",
+        "Express.js": "Framework for Node.js",
+        "MySQL": "Relational database",
+        "Git": "Version control",
+        "GitHub": "Collaboration platform",
+        "VS Code": "Code editor",
+        "Slack": "Communication and collaboration",
+        "Jira": "Project and task management"
+      }
+    },
+    "contact": {
+      "title": "Contact Me",
+      "subtitle": "Have a question or a proposal? Write to me!",
+      "nameLabel": "Name",
+      "emailLabel": "Email Address",
+      "messageLabel": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "messagePlaceholder": "Write your message here...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "There was an error sending the message. Please try again."
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressValue": "San Juan de los Morros, Guarico State, Venezuela",
+    "socialNetworks": "Social Networks",
+    "copyright": "© 2026 Juan Miguel Laya Muñoz. All rights reserved."
+  },
+  "navbar": {
+    "home": "Home",
+    "skills": "Skills",
+    "contact": "Contact"
+  }
+}

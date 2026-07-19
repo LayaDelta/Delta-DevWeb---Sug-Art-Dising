@@ -1,0 +1,63 @@
+{
+  "home": {
+    "welcome": {
+      "title": "¡Hola, soy Juan Miguel Laya Muñoz!",
+      "paragraph": "Desarrollador Web Mid-Level | React • Next.js • Node.js | Apasionado | FrontEnd | Estudiante de Ingeniería en Sistemas Avanzados en la Universidad Nacional Experimental de los Llanos Centrales «Rómulo Gallegos». Combino habilidades técnicas sólidas con una mentalidad analítica, metódica y orientada a los detalles.",
+      "ageLabel": "Edad: ",
+      "expLabel": "Años programando FrontEnd: "
+    },
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "text": "Tecnologías y herramientas que domino en mi día a día como desarrollador",
+      "categories": {
+        "Frontend": "Frontend",
+        "Backend": "Backend",
+        "Bases de Datos": "Bases de Datos",
+        "Gestión": "Gestión",
+        "Herramientas": "Herramientas"
+      },
+      "descriptions": {
+        "React": "Biblioteca para interfaces de usuario",
+        "JavaScript": "Lenguaje de programación web",
+        "HTML5": "Estructura y estilos web",
+        "CSS3": "Estructura y estilos web",
+        "Node.js": "JavaScript runtime para backend",
+        "Express.js": "Framework para Node.js",
+        "MySQL": "Base de datos relacional",
+        "Git": "Control de versiones",
+        "GitHub": "Plataforma de colaboración",
+        "VS Code": "Editor de código",
+        "Slack": "Comunicación y colaboración",
+        "Jira": "Gestión de proyectos y tareas"
+      }
+    },
+    "contact": {
+      "title": "Contáctame",
+      "subtitle": "¿Tienes alguna pregunta o propuesta? ¡Escríbeme!",
+      "nameLabel": "Nombre",
+      "emailLabel": "Correo Electrónico",
+      "messageLabel": "Mensaje",
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "tu@correo.com",
+      "messagePlaceholder": "Escribe tu mensaje aquí...",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Hubo un error al enviar el mensaje. Inténtalo de nuevo."
+    }
+  },
+  "footer": {
+    "contact": "Contacto",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "addressValue": "San Juan de los Morros, Edo. Guárico, Venezuela",
+    "socialNetworks": "Redes Sociales",
+    "copyright": "© 2026 Juan Miguel Laya Muñoz. Todos los derechos reservados."
+  },
+  "navbar": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  }
+}
